@@ -1,0 +1,20 @@
+<% include partials/header.ejs %>
+
+<div class="ui main text container segment">
+    <div class="ui huge header">
+        New Link
+    </div>
+    <form class="ui form" action="/links" method="POST">
+        <div class="field">
+            <label for="">Enter a new Link:</label>
+            <input type="text" name="link[url]" placeholder="Enter a new link" min="100">
+        </div>
+        <div class="field">
+            <label for="">Enter Date:</label>
+            <input type="date" name="link[added]" placeholder="Enter date" max="20">
+        </div>
+        <button type="submit" class="ui button basic big">Submit</button>
+    </form>
+</div>
+
+<% include partials/footer.ejs %>

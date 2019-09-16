@@ -1,0 +1,18 @@
+<% include partials/header.ejs %>
+
+<div class="ui main container segment">
+    <form class="ui form" action="/links/<%= link._id %>?method=PUT" method="POST">
+        <div class="field">
+            <label for="">Enter a new Link:</label>
+            <input type="text" name="link[url]" value="<%= link.url %>">
+        </div>
+        <div class="field">
+            <label for="">Enter Date:</label>
+            <input type="date" name="link[added]" value="<%= link.added.toISOString().substr(0,10) %>">
+        </div>
+        <button type="submit" class="ui button basic violet">Submit</button>
+    </form>
+</div>
+
+
+<% include partials/footer.ejs %>

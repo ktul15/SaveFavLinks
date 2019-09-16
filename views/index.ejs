@@ -1,0 +1,29 @@
+<% include partials/header.ejs %>
+
+<div class="ui main container text">
+    <div class="ui huge header">
+        My Links
+    </div>
+
+    <div class="ui top attached segment">
+        <div class="ui divided items">
+            <% allLinks.forEach((link) => { %>
+                <div class="item">
+                    <div class="content">
+                        <a href="<% link.url %>" class="header"><%= link.url %></a>
+                        <div class="meta">
+                            <span>Added - <%= link.added.toDateString() %></span>
+                        </div>
+                        <a href="/links/<%= link._id %>/edit" class="ui basic button primary">Edit</a>
+                        <form action="/links/<%= link._id %>?_method=DELETE" method="POST" id="delete">
+                            <button type="submit" class="ui basic button red">Delete</button>
+                        </form>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+</div>
+
+<% include partials/footer.ejs %>
+
